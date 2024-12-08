@@ -78,7 +78,7 @@
         let editingFoodId = null;
 
         function fetchFoods() {
-            fetch('https://your-backend-url.onrender.com/food')
+            fetch('/food')
                 .then(response => response.json())
                 .then(data => {
                     foods = data;
@@ -126,7 +126,7 @@
             const image = document.getElementById('image').value;
 
             if (editingFoodId) {
-                fetch(`https://your-backend-url.onrender.com/food/${editingFoodId}`, {
+                fetch(`https://food-menu-backend.onrender.com/food/${editingFoodId}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, price, image }),
@@ -141,7 +141,7 @@
                     })
                     .catch(err => console.error(err));
             } else {
-                fetch('https://your-backend-url.onrender.com/food', {
+                fetch('https://food-menu-backend.onrender.com/food', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, price, image }),
@@ -178,7 +178,7 @@
         function deleteFood(foodId) {
             if (!confirm('Are you sure you want to delete this food?')) return;
 
-            fetch(`https://your-backend-url.onrender.com/food/${foodId}`, { method: 'DELETE' })
+            fetch(`https://food-menu-backend.onrender.com/food/${foodId}`, { method: 'DELETE' })
                 .then(response => response.json())
                 .then(() => {
                     alert('Food deleted successfully!');
@@ -192,7 +192,7 @@
                 checkbox => parseInt(checkbox.value)
             );
 
-            fetch('https://your-backend-url.onrender.com/menu', {
+            fetch('https://food-menu-backend.onrender.com/menu', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
