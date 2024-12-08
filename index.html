@@ -59,16 +59,6 @@
             }
         }
 
-        // WebSocket Connection
-        const socket = new WebSocket('ws://localhost:3000');
-
-        socket.addEventListener('message', event => {
-            const message = JSON.parse(event.data);
-            if (message.type === 'MENU_UPDATE') {
-                updateMenu(message);
-            }
-        });
-
         contactButton.addEventListener('click', () => {
             const selectedItems = Array.from(document.querySelectorAll('.food-checkbox:checked')).map(checkbox => {
                 const name = checkbox.value;
