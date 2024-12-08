@@ -131,7 +131,7 @@
 
             if (editingFoodId) {
                 // Edit existing food
-                fetch(`http://localhost:3000/food/${editingFoodId}`, {
+                fetch(`https://food-menu-backend.onrender.com/food/${editingFoodId}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, price, image }),
