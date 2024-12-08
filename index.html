@@ -22,7 +22,7 @@
         const contactButton = document.getElementById('contactButton');
 
         // Fetch today's menu initially
-        fetch('http://localhost:3000/menu')
+        fetch('https://food-menu-backend.onrender.com/menu')
             .then(response => response.json())
             .then(updateMenu)
             .catch(err => console.error("Failed to load menu:", err));
