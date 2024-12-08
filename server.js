@@ -114,3 +114,7 @@ server.on('upgrade', (request, socket, head) => {
         wss.emit('connection', socket, request);
     });
 });
+
+// Use the dynamic PORT assigned by Render
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
